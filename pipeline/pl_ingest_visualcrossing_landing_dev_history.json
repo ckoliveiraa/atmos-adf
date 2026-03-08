@@ -140,6 +140,54 @@
 									}
 								}
 							]
+						},
+						{
+							"name": "adding_data",
+							"type": "SetVariable",
+							"dependsOn": [
+								{
+									"activity": "copy_visualcrossing_to_landing",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "add_data",
+								"value": {
+									"value": "@formatDateTime(adddays(variables('current_date'), 1), 'yyyy-MM-dd')",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "set_current_date_next",
+							"type": "SetVariable",
+							"dependsOn": [
+								{
+									"activity": "adding_data",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "current_date",
+								"value": {
+									"value": "@variables('add_data')",
+									"type": "Expression"
+								}
+							}
 						}
 					],
 					"timeout": "0.12:00:00"
@@ -162,6 +210,9 @@
 				"type": "String"
 			},
 			"current_date": {
+				"type": "String"
+			},
+			"add_data": {
 				"type": "String"
 			}
 		},
