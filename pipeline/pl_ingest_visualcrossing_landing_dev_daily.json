@@ -1,5 +1,5 @@
 {
-	"name": "pl_ingest_visualcrossing_landing_dev",
+	"name": "pl_ingest_visualcrossing_landing_dev_daily",
 	"properties": {
 		"activities": [
 			{
@@ -111,7 +111,8 @@
 				"type": "string"
 			},
 			"date": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "@utcnow('yyyy-MM-dd')"
 			}
 		},
 		"folder": {
