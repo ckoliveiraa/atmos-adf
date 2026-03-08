@@ -62,7 +62,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@greaterOrEquals(variables('current_date'),pipeline().parameters.endDate)",
+						"value": "@greater(variables('current_date'),pipeline().parameters.endDate)",
 						"type": "Expression"
 					},
 					"activities": [
