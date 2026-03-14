@@ -13,7 +13,7 @@ Este repositório contém os pipelines do Azure Data Factory (ADF) do resource g
 
 ## Arquitetura
 
-![Arquitetura ADF](utils\image.png)
+![Arquitetura ADF](utils/image.png)
 
 ## Convenções de Nomenclatura
 
