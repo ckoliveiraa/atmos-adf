@@ -132,6 +132,10 @@
 										"ano": {
 											"value": "@item()",
 											"type": "Expression"
+										},
+										"file_name": {
+											"value": "@toLower(concat('atmos_', pipeline().parameters.id_estacao, '_', formatDateTime(utcNow(), 'yyyyMMddHHmmss'), '.csv'))",
+											"type": "Expression"
 										}
 									}
 								}
